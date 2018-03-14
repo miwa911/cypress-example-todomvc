@@ -11,13 +11,11 @@ node {
             'HOME=.',
         ]) {
           echo 'Building dependencies...'
-          sh 'npm install'
           echo 'Testing...'
-          sh 'npm run test:ci'
         }
       }
     } finally {
-      sh 'docker rmi test-image'
+      echo 'Finally...'
     }
 	} else {
 		echo "Day khong phai la branch dev nen khong lam gi ca "
